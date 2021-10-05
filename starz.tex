@@ -215,4 +215,121 @@ is found, with $\nu$ between 3 and 5. (The Sun is a main-sequence star.)
 
 \section{The equations of stellar evolution}
 
+\subsection{Local thermodynamic equilibrium}
+A star is a gaseous sphere, made of three kinds of particles -- electrons,
+protons and heavier nuclei, and the `particles' of electromagnetic radiation,
+photons. (Atoms and molecules cannot survive long in the energetic environment.)
+Frequent collision between all kinds of particles result in a state of
+thermodynamic equilibrium characterized by a single temperature. The kinetic
+energies of the electrons and protons are distributed according to Maxwell's
+formula, and the energies of the photons are distributed according to Planck's
+function, with the same temperature.
+
+The mean free path of all particles is many orders of magnitude smaller than the
+geometric dimensions of a star, and the mean free time is likewise smaller than
+the timescale for macroscopic changes in the star. This means that the star is
+also in \emph{local thermodynamic equilibrium} (LTE), i.e., any part of the star
+is characterized by a single temperature, although the temperature (and thus
+other properties) is not uniform in space nor constant in time.
+
+The \emph{structure} of a star of mass $M$ is uniquely determined if the
+temperature $T$, the density $\rho$, and the composition (mass fractions), are
+known at every point in the star. (A ``point'' is a value of $r$ or $m$.) The
+\emph{evolution} of a star composed of $n$ different elements is described by
+$n+2$ functions: $\rho(m,t)$, $T(m,t)$, and $X_i(m,t)$. We will now derive a
+set of simultaneous equations that connect these functions.
+
+\subsection{The energy equation}
+Consider a small element of mass $dm$ within a star, a thin spherical shell
+between radii $r$ and $r+dr$. Let $u$ be the internal energy per unit mass and
+$P$ the pressure. Then, according to the first law of thermodynamics
+\begin{equation}\label{eq:energy}
+\delta(udm) = dm\delta{u} = \delta{Q} + \delta{W}.
+\end{equation}
+The work $\delta{W}$ can be expressed as
+\begin{equation}\label{eq:W}
+\delta{W} = -P\delta{d}V = -P\delta\left(\frac{dV}{dm}\,dm\right) =
+-P\delta\Bigl(\frac{1}{\rho}\Bigr)dm.
+\end{equation}
+The sources of heat of the mass element are the release of nuclear energy, and
+heat flow in and out of the element. The rate of energy release through nuclear
+reactions, per unit mass, is denoted by $q$, and the total heat flow per unit
+time is denoted by $F$. Then
+\begin{equation}\label{eq:Q}
+\delta{Q} = qdm\delta{t} + F(m)\delta{t} - F(m+dm)\delta{t} =
+\left(q - \frac{\di{F}}{\di{m}}\right)dm\delta{t}.
+\end{equation}
+Substituting~\eqref{eq:W} and~\eqref{eq:Q} into~\eqref{eq:energy} we get
+\begin{equation}
+dm\delta{t} + P\delta\left(\frac{1}{\rho}\right)dm =
+\left(q - \frac{\di{F}}{\di{m}}\right)dm\delta{t},
+\end{equation}
+and in the limit $\delta{t}\to\infty$,
+\begin{equation}\label{eq:energy2}
+\dot{u} + P\dot{\left(\frac{1}{\rho}\right)} = q - \frac{\di{F}}{\di{m}}.
+\end{equation}
+
+If temporal derivatives vanish then
+\begin{equation}
+q = \frac{dF}{dm},
+\end{equation}
+which is equivalent to
+\begin{equation}
+L_\text{nuc} = \int_0^Mq\,dm,
+\end{equation}
+i.e., the energy is radiated away from the star at the same rate is is produced
+in the interior.
+
+\subsection{The equation of motion}
+Consider a small cylindrical volume element within a star, with an axis of
+length $dr$ in the radial direction, between $r$ and $r+dr$, and a base $dS$.
+The mass is given by
+\begin{equation}\label{eq:delem}
+\Delta{m} = \rho{d}rdS.
+\end{equation}
+
+The forces acting on this element are the force of gravity and the pressure
+gradient. The equation of motion (Newton's second law) is expressed by
+\begin{equation}
+\ddot{r}\Delta{M} = -\frac{Gm\Delta{m}}{r^2} + P(r)dS - P(r+dr)dS.
+\end{equation}
+Substituting $\Delta{m}$ from~\eqref{eq:delem} we get
+\begin{equation}\label{eq:eom1}
+\ddot{r} = -\frac{Gm}{r^2} - \frac{1}{\rho}\frac{\di{P}}{\di{r}}.
+\end{equation}
+Making the transformation to $m$ as the independent variable,
+Eq.~\eqref{eq:eom1} becomes
+\begin{equation}\label{eq:eom2}
+\ddot{r} = -\frac{Gm}{r^2} - 4\pi{r}^2\frac{\di{P}}{\di{m}}.
+\end{equation}
+
+In a state of \emph{hydrostatic equilibrium}, with gravitational and pressure
+forces exactly in balance,
+\begin{equation}
+\frac{\di{P}}{\di{r}} = -\rho\frac{Gm}{r^2},
+\end{equation}
+or,
+\begin{equation}\label{eq:hydro2}
+\frac{\di{P}}{\di{m}} = -\frac{Gm}{4\pi{r}^4}.
+\end{equation}
+Note that hydrostatic equilibrium implies that pressure drops outward.
+
+We can estimate the pressure at the center of a star by integrating
+Eq.~\eqref{eq:hydro2} from the center to the surface,
+\begin{equation}
+P(M) - P(0) = -\int_0^M\frac{Gm}{4\pi{r}^4}\,dm.
+\end{equation}
+We can thus obtain a lower limit on the central pressure $P_c$:
+\begin{equation}
+P_c = \int_0^M\frac{Gm}{4\pi{r}^4}\,dm>\int_0^M\frac{Gm}{4\pi{R}^4}dm =
+\frac{GM^2}{8\pi{R}^4}.
+\end{equation}
+In solar units,
+\begin{equation}
+P_c > 4.48\times10^{13}\left(\frac{M}{M_{\Sun}}\right)^2\left(\frac{R_{\Sun}}
+{R}\right)^4\unit{N\,m^{-2}}.
+\end{equation}
+The pressure at the center of the Sun exceeds $4\times10^8$ atmospheres, or 400
+mega bars.
+
 \end{document}

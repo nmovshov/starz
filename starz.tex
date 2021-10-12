@@ -17,6 +17,9 @@
 \newcommand{\code}[1]{\textsc{#1}}
 \newcommand{\eps}{\varepsilon}
 \newcommand{\Sun}{\astrosun}
+\newcommand{\rsun}{R_{\astrosun}}
+\newcommand{\msun}{M_{\astrosun}}
+\newcommand{\lsun}{L_{\astrosun}}
 \newcommand{\di}{\partial} % partial derivative
 \newcommand{\kros}{\times} % vector product
 \newcommand{\grad}{\boldsymbol{\nabla}} % gradient operator
@@ -474,6 +477,84 @@ particle physics for $q$ and $\V{f}$.
 \item Boundary and initial conditions have to be supplied. Boundary conditions
 are straightforward: $P(M,t)=0$ and $F(0,t)=0$. The initial state of a star is a
 rather difficult question that will need to be circumvented.
+\end{itemize}
+
+\subsection{The characteristic timescales of stellar evolution}
+The evolution of a star is described by three time-dependent equations, dealing
+with three different types of physical changes: dynamical, or structural change
+in the first equation, thermal changes in the second, and changes in
+composition, resulting from nuclear reactions, in the third. Each of these
+processes has a different characteristic time scale.
+
+\subsubsection*{The dynamical timescale}
+\begin{itemize}
+\item The characteristic dimension of the star is the radius $R$. The
+characteristic velocity in a gravitational field is the escape velocity
+$v\sub{esc}=\sqrt{2GM/R}$. The characteristic timescale of dynamical processes
+is
+\begin{equation}
+\tau\sub{dyn} = \frac{R}{v\sub{esc}} =
+\sqrt{\frac{R^3}{2GM}} \approx \sqrt{\frac{1}{G\bar{\rho}}}.
+\end{equation}
+
+\item The dynamical timescale of the Sun is roughly $1000\unit{s}$, and
+generally
+\begin{equation}
+\tau\sub{dyn} \approx
+1000\sqrt{\left(\frac{R}{\rsun}\right)^3\left(\frac{\msun}{M}\right)}
+\unit{s}.
+\end{equation}
+
+\item The dynamical timescale is very short, many orders of magnitudes shorter
+than the typical stellar lifetime.
+
+\item A dynamical process occurs when the gravitational force is not balanced
+by the pressure. This can result in a catastrophic event -- collapse or
+explosion, or in return to hydrostatic equilibrium. Either way, the end state
+will be achieved in a time comparable to the dynamical time scale.
+
+\item If a star cannot recover from a dynamical process by restoring hydrostatic
+equilibrium, the resulting explosion should be observable in its entirety --
+this is a supernova.
+
+\item A star that is not currently exploding or collapsing may be assumed to be
+in a state of quasi-hydrostatic equilibrium. Any perturbation is quickly
+quenched. Consequently, the virial theorem may be assumed to hold at all times.
+\end{itemize}
+
+\subsubsection*{The thermal timescale}
+\begin{itemize}
+\item The internal energy of the star, $U$, is the characteristic thermal
+property. By the virial theorem $U\approx{G}M^2/R$. The characteristic rate of
+change of $U$ is the rate at which the star radiates energy, $L$. The thermal
+timescale is then
+\begin{equation}
+\tau\sub{th} = \frac{U}{L} \approx \frac{GM^2}{RL}.
+\end{equation}
+
+\item The thermal timescale for the Sun is $10^{15}\unit{s}$, and generally
+\begin{equation}
+\tau\sub{th} =
+10^{15}\left(\frac{M}{\msun}\right)^2\left(\frac{\rsun}{R}\right)
+\left(\frac{\lsun}{L}\right)\unit{s}.
+\end{equation}
+
+\item The thermal timescale is many orders of magnitude longer than the
+dynamical timescale, but is still only a fraction of the lifespan of the star.
+We may assume that throughout most of its life a star maintains thermal
+equilibrium.
+
+\item If a star maintains thermal and hydrostatic equilibrium its energy is
+conserved, and by the virial theorem its internal energy and gravitational
+energy are both independently conserved. This means that under these
+circumstances if a part of the star contracts another part must expand; if the
+temperature rises in some place it must decrease in another.
+
+\item That the age of the Earth is evidently, from biology and geology, much
+longer that the Sun's thermal timescale was historically a decisive clue that
+reservoirs or energy exists in subatomic process maintaining the Sun's
+luminosity much longer than would be possible through gravitational contraction
+alone.
 \end{itemize}
 
 \end{document}

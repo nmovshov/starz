@@ -19,12 +19,14 @@
 \newcommand{\Sun}{\astrosun}
 \newcommand{\rsun}{R_{\astrosun}}
 \newcommand{\msun}{M_{\astrosun}}
+\newcommand{\mh}{m\sub{H}}
 \newcommand{\lsun}{L_{\astrosun}}
 \newcommand{\di}{\partial} % partial derivative
 \newcommand{\kros}{\times} % vector product
 \newcommand{\grad}{\boldsymbol{\nabla}} % gradient operator
 \newcommand{\divergenz}[1]{\boldsymbol{\nabla}\cdot\V{#1}} % divergence operator
 \newcommand{\curl}[1]{\boldsymbol{\nabla}\kros\V{#1}} % curl (rot) operator
+\newcommand{\mean}[1]{\langle{#1}\rangle}
 
 \begin{document}
 \title{Stellar Physics}
@@ -438,7 +440,7 @@ one element into another -- by nuclear reactions.
 \item Denote by $\rho_i$ the partial density of the $i$th atomic species, so
 that $X_i=\rho_i/\rho$. To a good approximation the number density of the
 species would be
-\begin{equation}
+\begin{equation}\label{eq:partial_density}
 n_i = \frac{\rho_i}{A_im_H} = \frac{\rho}{m_H}\frac{X_i}{A_i},
 \end{equation}
 where $A_i$ is the \emph{baryon number} and $m_H$ the \emph{atomic mass unit}.
@@ -639,6 +641,95 @@ $P_I$ for the ions, $P_e$ for the electrons, and $P_\text{rad}$ for the photons.
 
 \item We denote by $P_\text{gas}$ the contribution of both ions and electrons,
 and $\beta$ is the fractional contribution from $P\sub{gas}$.
+\end{itemize}
+
+\subsection{Ion pressure}
+\begin{itemize}
+\item The equation of state for an ideal ion gas is
+\begin{equation}
+P\sub{I} = n\sub{I}kT,
+\end{equation}
+the number of ions per unit volume $n\sub{I}$ is obtained by summing over all
+ion species (eq.~\ref{eq:partial_density}):
+\begin{equation}
+n\sub{I} = \sum_in_i = \sum_i\frac{\rho}{\mh}\frac{X_i}{A_i}.
+\end{equation}
+
+\item We define the \emph{mean atomic mass} of stellar material $\mu\sub{I}$ by
+\begin{equation}
+\frac{1}{\mu\sub{I}}\equiv\sum_i\frac{X_i}{A_i},
+\end{equation}
+so that $n\sub{I}=\rho/\mu\sub{I}\mh$. The mean atomic mass can be
+approximated by
+\begin{equation}
+\frac{1}{\mu\sub{I}}\approx{X} + \frac{1}{4}Y + \frac{1-X-Y}{\mean{A}},
+\end{equation}
+where $\mean{A}$ is the average atomic mass of `metals'.
+
+\item In the Sun $X=0.707$, $Y=0.274$, and $\mean{A}\approx{20}$, so that
+$\mu\sub{I}={1.29}$.
+\end{itemize}
+
+\subsection{The electron pressure}
+\begin{itemize}
+\item In the classical regime the equation of state for an ideal electron gas is
+\begin{equation}
+P\sub{e} = n\sub{e}kT.
+\end{equation}
+We can relate the electron number density to the species mass fractions and
+atomic numbers by making the simplifying assumption of complete ionization 
+(valid for the stellar interior but not the photosphere) so that
+\begin{equation}
+n\sub{e} = \sum_iZ_in_i = \frac{\rho}{\mh}\sum_iX_i\frac{Z_i}{A_i} =
+\frac{\rho}{\mu\sub{e}\mh}
+\end{equation}
+with $\mu\sub{e}^{-1}\equiv\sum_iX_iZ_i/A_i$.
+
+\item In terms of $X,Y,Z$ mass fractions we have
+\begin{equation}
+\frac{1}{\mu\sub{e}} = X + \frac{1}{2}Y + (1 - X - Y)\mean{Z/A}
+\approx \frac{1}{2}(1 + X)
+\end{equation}
+for common metals. Solar composition yields $\mu\sub{e}\approx{1.17}.$
+
+\item The total gas pressure in this classical regime is
+\begin{equation}
+P\sub{gas} = P\sub{I} + P\sub{e} = \frac{R}{\mu}\rho{T}
+\end{equation}
+with $\mu^{-1}=\mu\sub{I}^{-1}+\mu\sub{e}^{-1}$ and the \emph{ideal gas
+constant} $R=k/\mh$. For solar composition $\mu\approx{0.61}$.
+
+
+
+\item In a high pressures regime the electron gas enter a \emph{degenerate}
+state, in which the assumption of non-interacting, free particles is valid still
+(kinetic energy is still much higher than coulomb energy), but the distribution
+of momenta to be used in the pressure integral no longer follows Maxwell's
+function. The transition to a degenerate state is of course smooth, but the
+extreme case of a fully degenerate electron gas is easier to analyze.
+
+The analysis applies the Heisenberg and Pauli principles to yield the momentum
+distribution from which the the pressure integral yields
+\begin{equation}
+P\sub{e,deg}=K_1'\left(\frac{\rho}{\mu\sub{e}}\right)^{5/3}=K_1\rho^{5/3}
+\end{equation}
+in the non-relativistic regime and
+\begin{equation}
+P\sub{e,rel,deg}=K_2'\left(\frac{\rho}{\mu\sub{e}}\right)^{4/3}=K_2\rho^{4/3}.
+\end{equation}
+when the extreme relativistic, $p=mc$, is reached.
+
+\item The expressions for the pressure of the degenerate states were obtained on
+the assumption of zero temperature. This is why the pressure is only a function
+of density. In fact, even in partial degeneracy the temperature plays a smaller
+role than in an ideal gas. We treat the pressure in the degenerate states as
+insensitive to temperature.
+
+\item A state of degeneracy can also occur for ions, but at pressures much
+higher than those for electrons, and proton or neutron degeneracy will be
+ignored.
+
+\item Obviously, this whole section is black-box for me.
 \end{itemize}
 
 \end{document}
